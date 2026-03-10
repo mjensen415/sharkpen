@@ -77,46 +77,46 @@
       </div>
 
       <div class="reveal">
-        <div class="contact-form-wrap">
+        <form class="contact-form-wrap" action="mailto:dskarpnes@sharkpenconsulting.com" method="post" enctype="text/plain">
           <div class="form-title">Request a Consultation</div>
           <div class="form-subtitle">We respond to all inquiries within one business day.</div>
           <div class="form-row">
             <div class="form-group">
               <label>First Name</label>
-              <input type="text" placeholder="Alex">
+              <input type="text" name="First Name" placeholder="Alex" required>
             </div>
             <div class="form-group">
               <label>Last Name</label>
-              <input type="text" placeholder="Johnson">
+              <input type="text" name="Last Name" placeholder="Johnson" required>
             </div>
           </div>
           <div class="form-group">
             <label>Work Email</label>
-            <input type="email" placeholder="alex@yourcompany.com">
+            <input type="email" name="Email" placeholder="alex@yourcompany.com" required>
           </div>
           <div class="form-group">
             <label>Company</label>
-            <input type="text" placeholder="Your Organization">
+            <input type="text" name="Company" placeholder="Your Organization">
           </div>
           <div class="form-group">
             <label>Area of Interest</label>
-            <select>
+            <select name="Interest">
               <option value="" disabled selected>Select a service area</option>
-              <option>AI/ML Training & Enablement</option>
-              <option>Custom Model Development</option>
-              <option>Managed Cloud Operations</option>
-              <option>Cybersecurity & Compliance</option>
-              <option>Agentic IT Monitoring</option>
-              <option>AI Readiness Assessment</option>
-              <option>Full Partnership / All Services</option>
+              <option value="AI/ML Training & Enablement">AI/ML Training & Enablement</option>
+              <option value="Custom Model Development">Custom Model Development</option>
+              <option value="Managed Cloud Operations">Managed Cloud Operations</option>
+              <option value="Cybersecurity & Compliance">Cybersecurity & Compliance</option>
+              <option value="Agentic IT Monitoring">Agentic IT Monitoring</option>
+              <option value="AI Readiness Assessment">AI Readiness Assessment</option>
+              <option value="Full Partnership / All Services">Full Partnership / All Services</option>
             </select>
           </div>
           <div class="form-group">
             <label>Tell us about your challenge</label>
-            <textarea placeholder="Briefly describe your current environment and what you're looking to achieve..."></textarea>
+            <textarea name="Message" placeholder="Briefly describe your current environment and what you're looking to achieve..." required></textarea>
           </div>
-          <button class="submit-btn" onclick="handleSubmit(this)">Send Message</button>
-        </div>
+          <button type="submit" class="submit-btn" onclick="handleSubmit(this)">Send Message</button>
+        </form>
       </div>
     </div>
   </div>
@@ -190,9 +190,15 @@
   reveals.forEach(el => observer.observe(el));
 
   function handleSubmit(btn) {
-    btn.textContent = 'Message Sent — We\'ll be in touch shortly.';
-    btn.style.background = 'var(--teal-dark)';
-    btn.disabled = true;
+    const form = btn.closest('form');
+    if(form.checkValidity()) {
+        btn.textContent = 'Opening Mail Client...';
+        btn.style.background = 'var(--teal-dark)';
+        setTimeout(() => {
+            btn.textContent = 'Message Sent';
+            btn.disabled = true;
+        }, 1500);
+    }
   }
 </script>
 </body>
