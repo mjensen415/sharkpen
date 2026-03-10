@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharkpen Consulting — IT Consulting & AI/ML Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">
+    <svg class="logo-icon" viewBox="0 0 32 32" fill="none">
+      <rect width="32" height="32" rx="4" fill="#f0fdfa"/>
+      <path d="M5 19 C9 12, 17 9, 23 14 C26 16.5, 27 14, 29 10" stroke="#0d9488" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <path d="M29 10 L27.5 13.5 L30.5 13" stroke="#0d9488" stroke-width="1.5" stroke-linejoin="round"/>
+      <circle cx="23" cy="14" r="2" fill="none" stroke="#0d9488" stroke-width="1.5"/>
+    </svg>
+    <span class="logo-name">Sharkpen<span>.</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="ai-ml-services.html">AI/ML Services</a></li>
+    <li><a href="managed-it.html">Managed IT</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Get in Touch</a>
+</nav>
+
+
+<section style="padding: 150px 64px 100px; background: var(--white); min-height: 60vh;">
+  <div class="section-wrap" style="max-width: 800px; margin: 0 auto; padding: 0;">
+    <h1 class="hero-h1">Terms of Service</h1>
+    <p style="font-size: 15px; color: var(--text2); line-height: 1.8;">By using our services, you agree to our standard terms and conditions. These terms govern the use of Sharkpen Consulting\'s platform and IT advisory engagements.</p>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="logo" style="margin-bottom:0;">
+        <svg class="logo-icon" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="4" fill="rgba(13,148,136,0.15)"/>
+          <path d="M5 19 C9 12, 17 9, 23 14 C26 16.5, 27 14, 29 10" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <circle cx="23" cy="14" r="2" fill="none" stroke="#14b8a6" stroke-width="1.5"/>
+        </svg>
+        <span class="logo-name">Sharkpen<span style="color:var(--teal-light)">.</span></span>
+      </a>
+      <p class="footer-desc">IT consulting, AI/ML training, and managed services for organizations navigating the agentic era.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="ai-ml-services.html">AI/ML Training</a></li>
+        <li><a href="ai-ml-services.html">Custom Model Dev</a></li>
+        <li><a href="ai-ml-services.html">Agentic Workflows</a></li>
+        <li><a href="ai-ml-services.html">Data Strategy</a></li>
+        <li><a href="ai-ml-services.html">AI Readiness Assessment</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Managed IT</div>
+      <ul class="footer-links">
+        <li><a href="managed-it.html">Cloud Operations</a></li>
+        <li><a href="managed-it.html">Cybersecurity</a></li>
+        <li><a href="managed-it.html">IT Monitoring</a></li>
+        <li><a href="managed-it.html">Network & Connectivity</a></li>
+        <li><a href="managed-it.html">Backup & Recovery</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html">Our Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Sharkpen Consulting, Inc. All rights reserved.</span>
+    <ul class="footer-legal">
+      <li><a href="privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="terms-of-service.html">Terms of Service</a></li>
+      <li><a href="accessibility.html">Accessibility</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+
+  function handleSubmit(btn) {
+    btn.textContent = 'Message Sent — We\'ll be in touch shortly.';
+    btn.style.background = 'var(--teal-dark)';
+    btn.disabled = true;
+  }
+</script>
+</body>
+</html>
