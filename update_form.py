@@ -5,21 +5,18 @@ def update_form(filename):
         html = f.read()
 
     # The block we want to replace
-    old_form_start = html.find('<div class="contact-form-wrap">')
+    old_form_start = html.find('<form class="contact-form-wrap"')
     if old_form_start == -1:
         return False
         
-    old_form_end = html.find('</div>\n      </div>\n    </div>', old_form_start)
+    old_form_end = html.find('</form>', old_form_start)
     if old_form_end == -1:
-         # index.html has a slightly different ending
-         old_form_end = html.find('</div>\n      </div>\n    </div>\n  </div>', old_form_start)
-         if old_form_end == -1:
-             return False
+        return False
     
-    # We want to keep the wrapping structure but change the inner div to a form
-    old_block = html[old_form_start:old_form_end + 6] # pull the closing </div>
+    # We want to keep the wrapping structure but change the inner form
+    old_block = html[old_form_start:old_form_end + 7] # pull the closing </form>
     
-    new_block = '''<form class="contact-form-wrap" action="mailto:dskarpnes@sharkpenconsulting.com" method="post" enctype="text/plain">
+    new_block = '''<form class="contact-form-wrap" action="https://formsubmit.co/dskarpnes@sharkpenconsulting.com" method="POST" autocomplete="off">
           <div class="form-title">Request a Consultation</div>
           <div class="form-subtitle">We respond to all inquiries within one business day.</div>
           <div class="form-row">

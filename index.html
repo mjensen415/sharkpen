@@ -469,7 +469,7 @@
       </div>
 
       <div class="reveal">
-        <form class="contact-form-wrap" action="mailto:dskarpnes@sharkpenconsulting.com" method="post" enctype="text/plain">
+        <form class="contact-form-wrap" action="https://formsubmit.co/dskarpnes@sharkpenconsulting.com" method="POST" autocomplete="off">
           <div class="form-title">Request a Consultation</div>
           <div class="form-subtitle">We respond to all inquiries within one business day.</div>
           <div class="form-row">
@@ -584,7 +584,7 @@
   function handleSubmit(btn) {
     const form = btn.closest('form');
     if(form.checkValidity()) {
-        btn.textContent = 'Opening Mail Client...';
+        btn.textContent = 'Sending...';
         btn.style.background = 'var(--teal-dark)';
         setTimeout(() => {
             btn.textContent = 'Message Sent';
